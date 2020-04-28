@@ -1,0 +1,86 @@
+html{
+    box-sizing: border-box;
+    background: #f75920;
+    font-family: 'Baloo Tamma 2';
+    font-size: 10px;
+}
+
+body{
+    margin: 0;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+.panels{
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.panel{
+    background: #6B0F9C;
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.3);
+    transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel1{ background-image:url(https://architrav.pl/wp-content/uploads/2018/05/karlovo-namesti-praga-wiosna-2.jpg);}
+.panel2{ background-image:url(https://architrav.pl/wp-content/uploads/2020/04/zakamarki-w-Pradze-scaled.jpg);}
+.panel3{ background-image:url(https://architrav.pl/wp-content/uploads/2019/05/wzgorze-petrin-praga-5.jpg);}
+.panel4{ background-image:url(https://architrav.pl/wp-content/uploads/2020/04/pruhonicky-zamek-scaled.jpg);}
+.panel5{ background-image:url(https://architrav.pl/wp-content/uploads/2020/04/praga-rynek-scaled.jpg);}
+
+.panel > *{
+    margin: 0;
+    width: 100%;
+    transition: transform 0.2s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel > *:first-child{
+    transform: translateY(-100%);
+}
+
+.panel.open-active > *:first-child{
+    transform: translateY(0);
+}
+
+.panel > *:last-child{
+    transform: translateY(100%);
+}
+
+.panel.open-active > *:last-child{
+    transform: translateY(0);
+}
+
+.panel p{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1em;
+}
+
+.panel p:nth-child(2){
+    font-size: 3em;
+}
+
+.panel.open{
+    font-size: 40px;
+    flex: 5; 
+}
